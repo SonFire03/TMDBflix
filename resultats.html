@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resultats | TMDB Explorer</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body class="catalog-body">
+    <header class="catalog-header">
+      <div class="catalog-header-inner">
+        <p class="logo">TMDBFLIX</p>
+        <nav><a href="/">Accueil</a><a href="/tendances">Tendances</a><a href="/resultats">Resultats</a><a href="/watchlist">Ma liste</a></nav>
+        <button id="themeToggle" class="toggle-btn" type="button">Mode clair</button>
+      </div>
+    </header>
+    <main>
+      <section class="search-panel" id="resultats">
+        <div class="search-row"><input id="searchInput" type="text" autocomplete="off" placeholder="Rechercher un film, une serie, un acteur..." /><button id="searchBtn" class="cta primary" type="button">Rechercher</button></div>
+        <div class="chip-row">
+          <button id="frOnlyBtn" class="chip active" type="button">🇫🇷 Films FR</button>
+        </div>
+        <div class="chip-row" id="quickRow"><button class="chip quick" data-query="Dune" type="button">Dune</button><button class="chip quick" data-query="Interstellar" type="button">Interstellar</button><button class="chip quick" data-query="The Batman" type="button">The Batman</button><button class="chip quick" data-query="Breaking Bad" type="button">Breaking Bad</button></div>
+        <div class="chip-row filter-row"><button class="chip active" data-filter="all" type="button">Tout</button><button class="chip" data-filter="movie" type="button">Films</button><button class="chip" data-filter="tv" type="button">Series</button></div>
+        <div class="chip-row">
+          <select id="genreFilter" class="chip">
+            <option value="">Tous les genres</option>
+            <option value="28">Action</option>
+            <option value="35">Comedie</option>
+            <option value="18">Drame</option>
+            <option value="14">Fantastique</option>
+            <option value="878">Science-fiction</option>
+            <option value="10749">Romance</option>
+            <option value="53">Thriller</option>
+          </select>
+          <select id="langFilter" class="chip">
+            <option value="">Toutes langues</option>
+            <option value="fr">Francais</option>
+            <option value="en">Anglais</option>
+          </select>
+          <select id="ratingFilter" class="chip">
+            <option value="">Note min</option>
+            <option value="5">5+</option>
+            <option value="6">6+</option>
+            <option value="7">7+</option>
+            <option value="8">8+</option>
+          </select>
+        </div>
+        <p id="status" class="status" aria-live="polite"></p>
+        <div id="genreStats" class="genre-stats"></div>
+      </section>
+      <section class="rail">
+        <div class="rail-head"><h2>Resultats</h2><p><span id="statResults">0</span> affiches</p></div>
+        <div class="carousel-shell">
+          <button class="carousel-btn" data-target="resultsGrid" data-dir="left" type="button">‹</button>
+          <div id="resultsGrid" class="netflix-carousel"></div>
+          <button class="carousel-btn" data-target="resultsGrid" data-dir="right" type="button">›</button>
+        </div>
+        <div class="load-more-wrap"><button id="loadMoreBtn" class="cta primary hidden" type="button">Charger plus</button></div>
+      </section>
+    </main>
+    <dialog id="detailModal" class="modal" aria-label="Details media">
+      <div class="modal-head"><h3 id="modalTitle">Detail</h3><button id="closeModalBtn" class="chip" type="button">Fermer</button></div>
+      <div class="modal-grid"><img id="modalPoster" class="modal-poster" alt="Affiche" /><div><p id="modalMeta" class="modal-meta"></p><p id="modalOverview" class="modal-overview"></p><p id="modalGenres" class="modal-meta"></p><div class="modal-actions"><a id="modalWatch" class="cta primary" href="#" target="_blank" rel="noopener noreferrer">Regarder</a></div></div></div>
+    </dialog>
+    <script src="/static/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TMDB Explorer | Accueil</title>
+    <meta name="description" content="Plateforme catalogue cinema avec tendances, recherche avancee et watchlist." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body class="catalog-body">
+    <header class="catalog-header">
+      <div class="catalog-header-inner">
+        <p class="logo">TMDBFLIX</p>
+        <nav>
+          <a href="/">Accueil</a>
+          <a href="/tendances">Tendances</a>
+          <a href="/resultats">Resultats</a>
+          <a href="/watchlist">Ma liste</a>
+        </nav>
+        <button id="themeToggle" class="toggle-btn" type="button">Mode clair</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero-banner">
+        <div class="hero-content home-pro-hero">
+          <p class="hero-kicker">Catalogue Streaming</p>
+          <h1>Un hub cinema moderne pour explorer, filtrer et sauvegarder.</h1>
+          <p>
+            TMDB Explorer centralise les tendances, la recherche multi-critères et votre watchlist dans une expérience fluide,
+            pensée pour un usage quotidien.
+          </p>
+          <div class="hero-actions">
+            <a href="/tendances" class="cta primary">Explorer les tendances</a>
+            <a href="/resultats" class="cta secondary">Recherche avancee</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="home-pro-section">
+        <div class="home-pro-grid">
+          <article class="home-pro-card">
+            <h2>Decouverte instantanee</h2>
+            <p>Accedez rapidement aux films populaires, classes par categories et enrichis de metadata utiles.</p>
+            <a href="/tendances" class="home-pro-link">Voir les categories</a>
+          </article>
+          <article class="home-pro-card">
+            <h2>Recherche puissante</h2>
+            <p>Combinez types de medias, genres, langue et note minimale pour cibler exactement ce que vous voulez.</p>
+            <a href="/resultats" class="home-pro-link">Lancer une recherche</a>
+          </article>
+          <article class="home-pro-card">
+            <h2>Watchlist personnelle</h2>
+            <p>Conservez vos titres preferes localement, sans inscription, avec un acces direct depuis chaque carte.</p>
+            <a href="/watchlist" class="home-pro-link">Ouvrir ma liste</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="home-pro-section home-pro-band">
+        <div class="home-pro-band-inner">
+          <div>
+            <p class="hero-kicker">Workflow</p>
+            <h2>Un parcours simple en 3 etapes</h2>
+          </div>
+          <ol class="home-pro-steps">
+            <li>Explorer les tendances et categories du moment</li>
+            <li>Filtrer les resultats selon vos criteres</li>
+            <li>Sauvegarder les meilleurs titres dans votre liste</li>
+          </ol>
+        </div>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

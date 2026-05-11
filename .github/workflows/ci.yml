@@ -1,0 +1,29 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install deps
+        run: |
+          python -m venv .venv
+          . .venv/bin/activate
+          pip install -r requirements.txt
+      - name: Lint runtime syntax
+        run: |
+          . .venv/bin/activate
+          python -m py_compile server.py
+          node --check app.js
+          node --check detail.js
+      - name: Smoke tests
+        run: |
+          . .venv/bin/activate
+          python tests/smoke_test.py

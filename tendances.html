@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tendances | TMDB Explorer</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body class="catalog-body">
+    <header class="catalog-header">
+      <div class="catalog-header-inner">
+        <p class="logo">TMDBFLIX</p>
+        <nav><a href="/">Accueil</a><a href="/tendances">Tendances</a><a href="/resultats">Resultats</a><a href="/watchlist">Ma liste</a></nav>
+        <button id="themeToggle" class="toggle-btn" type="button">Mode clair</button>
+      </div>
+    </header>
+    <main>
+      <section class="rail" id="tendances">
+        <div class="rail-head"><h2>Tendances</h2><p><span id="statTrending">0</span> titres</p></div>
+        <p id="status" class="status" aria-live="polite"></p>
+        <div class="carousel-shell">
+          <button class="carousel-btn" data-target="trendingGrid" data-dir="left" type="button">‹</button>
+          <div id="trendingGrid" class="netflix-carousel"></div>
+          <button class="carousel-btn" data-target="trendingGrid" data-dir="right" type="button">›</button>
+        </div>
+      </section>
+      <section class="rail" id="categories">
+        <div class="rail-head"><h2>Categories</h2><p>Films par genre</p></div>
+        <div id="categoryRails"></div>
+      </section>
+    </main>
+    <dialog id="detailModal" class="modal" aria-label="Details media">
+      <div class="modal-head"><h3 id="modalTitle">Detail</h3><button id="closeModalBtn" class="chip" type="button">Fermer</button></div>
+      <div class="modal-grid"><img id="modalPoster" class="modal-poster" alt="Affiche" /><div><p id="modalMeta" class="modal-meta"></p><p id="modalOverview" class="modal-overview"></p><p id="modalGenres" class="modal-meta"></p><div class="modal-actions"><a id="modalWatch" class="cta primary" href="#" target="_blank" rel="noopener noreferrer">Regarder</a></div></div></div>
+    </dialog>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
